@@ -1,0 +1,2 @@
+/home/opensim/src/addins/bin/Release/mautil.exe
+/home/opensim/src/addins/mautil/obj/Release/mautil.exe
