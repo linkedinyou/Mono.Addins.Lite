@@ -1,2 +1,0 @@
-/home/opensim/src/addins/bin/Release/Mono.Addins.CecilReflector.dll
-/home/opensim/src/addins/Mono.Addins.CecilReflector/obj/Release/Mono.Addins.CecilReflector.dll

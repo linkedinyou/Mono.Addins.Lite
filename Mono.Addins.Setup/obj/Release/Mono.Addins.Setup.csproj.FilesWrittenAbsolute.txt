@@ -1,2 +1,0 @@
-/home/opensim/src/addins/bin/Release/Mono.Addins.Setup.dll
-/home/opensim/src/addins/Mono.Addins.Setup/obj/Release/Mono.Addins.Setup.dll
