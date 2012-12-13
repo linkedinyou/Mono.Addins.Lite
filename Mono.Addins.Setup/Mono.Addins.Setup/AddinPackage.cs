@@ -90,14 +90,11 @@ namespace Mono.Addins.Setup
 		static AddinInfo ReadAddinInfo (string file)
 		{
             string target = "addin-info";
-
             ZipOutputStream zout = new ZipOutputStream(file);
-
             if(zout.ContainsEntry(target))
             {
                 return AddinInfo.ReadFromAddinFile (new StreamReader (zout));
             }
-
 			throw new InstallException ("Addin configuration file not found in package.");
 		}
 		
@@ -130,24 +127,20 @@ namespace Mono.Addins.Setup
 			if (url != null)
 				packFile = service.DownloadFile (monitor, url);
 			
-			tempFolder = CreateTempFolder ();
             if(!Directory.Exists(tempFolder))
+			    tempFolder = CreateTempFolder ();
 
             using(ZipFile zip= ZipFile.Read(packFile)) {
-
                 foreach (ZipEntry entry in zip) {
                     string path = Path.Combine (tempFolder, entry.FileName);
                     string dir = Path.GetDirectoryName (path);
-
                     if (!Directory.Exists (dir))
                         Directory.CreateDirectory (dir);
 
                     Stream outStream = null;
                     try {
-
                         outStream = File.Create (path);
                         entry.Extract(outStream);
-
                     } finally {
                         if (outStream != null)
                             outStream.Close ();
@@ -388,7 +381,5 @@ namespace Mono.Addins.Setup
 				File.Copy (path, dfile);
 			}
 		}
-		
-		
 	}
 }
